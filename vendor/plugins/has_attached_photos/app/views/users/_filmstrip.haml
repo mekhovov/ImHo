@@ -1,0 +1,16 @@
+-content_for :stylesheet do
+  =stylesheet_link_tag 'filmstrip'
+#main
+  #gallery
+    #slides
+      -photos.each do |photo|
+        %div{:class => "slide container"}
+          %table
+            %tr 
+              %td{:align => "center"}=image_tag photo.photo.url
+    #menu  
+      %ul
+        %li.fbar &nbsp;
+        -photos.each do |photo|
+          %li.menuItem
+            %a{:href => ""}=image_tag photo.thumbnail_url, {:id => photo.id}

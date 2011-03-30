@@ -1,0 +1,11 @@
+#photos
+  -f.fields_for :attaches do |attach|
+    .thumb{:id => "thumb_#{attach.object.id}", :style => attach.object.new_record? ? 'display:none' : nil}
+      =link_to image_tag(attach.object.thumbnail_url, {:title => "Click to replace"}), "", {:class => 'edit_img', :id => attach.object.id}
+      =attach.check_box "_destroy"
+      =attach.label "Del"
+    .attach{:id => "attach_#{attach.object.id}", :style => 'display:none' }
+      =attach.label "Photo:"
+      =attach.file_field :photo
+  = image_tag("/images/ico-add_it.png", :alt => "Add photo")
+  =link_to "Add photo", "", :id => "more_attaches"

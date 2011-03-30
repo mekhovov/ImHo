@@ -1,0 +1,6 @@
+#photos
+  -f.fields_for :attaches do |attach|
+    .attach
+      =attach.label "Photo:"
+      =attach.file_field :photo
+  =link_to "Add photo", "", :id => "more_attaches"  

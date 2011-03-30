@@ -1,0 +1,72 @@
+<div class="block notice">
+  <span class="h9">User Info</span>
+  <div class="content">
+  	<div class="hr"></div>
+    <p>
+
+<div >
+  <% if current_user %>
+  <%= image_tag "#{request.ssl? ? "https://secure" : "http://www"}.gravatar.com/avatar/#{Digest::MD5.hexdigest current_user.email}?s=60", :alt => "" %>
+  <ul>
+    <li>
+      <strong><a href="#"><%= current_user.email %></a></strong>
+    </li>
+    <li class="desc">
+      <a href="<%= destroy_session_path(current_user) %>"><%= t("admin.credentials.log_out")%></a>
+    </li>
+  </ul>
+          <br>
+
+    <ul>
+      <li>
+      <strong>You have: </strong> <%= current_user.attaches.count%> photos
+    </li>
+      <br>
+    <li>
+      <strong>You can do:</strong>
+    </li>
+      <br>
+    <li>
+        <li><a href="/" class="login">Go Home</a></li>
+        <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show profile")}", user_path(current_user) %></li>
+        <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Edit profile")}", edit_user_path(current_user) %></li>
+    </li>
+  </ul>
+      <% else %>
+  <ul>
+    <li>
+      <strong>Hi anonymous</strong>
+    </li>
+    <br>
+    <li class="desc">
+        <li>You can do it:</li>
+        <li><a href="/users/sign_in" class="login"><%= t("web-app-theme.login", :default => "Sign In") %></a> <a href="/users/sign_up" class="login"><%= t("web-app-theme.login", :default => "Sign Up") %></a></li>
+    </li>
+  </ul>
+      <% end %>
+</div>
+
+    </p>
+
+    <br>
+  </div>
+</div>
+
+<div class="block notice">
+  <span class="h9">Tags</span>
+  <div class="content">
+  	<div class="hr"></div>
+    <p>
+
+	<p>
+  <ul>
+    <li><a href="/">Music</a></li>
+    <li><a href="/">Games</a></li>
+    <li><a href="/">Video</a></li>
+    <li><a href="/">Animals</a></li>
+    <li><a href="/">Life</a></li>
+
+  </ul>
+</p>
+  </div>
+</div>

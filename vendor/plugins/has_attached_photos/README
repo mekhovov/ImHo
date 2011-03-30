@@ -1,0 +1,72 @@
+HasAttachedPhotos
+==================
+Adds a possibility to attach pictures to your model, show them in different ways, store in different sizes,
+and add comments to attached pictures
+
+Requirements:
+==============
+- haml
+- paperclip
+- image_science         http://seattlerb.rubyforge.org/ImageScience.html (gem for Windows attached)
+    - freeimage         http://sourceforge.net/projects/freeimage  (dll for Windows attached)
+    - RubyInline        http://rubyforge.org/projects/rubyinline
+    - hoe               http://rubygems.org/gems/hoe
+- jQuery
+
+Installation:
+==============
+- download and install FreeImage
+- sudo gem install hoe RubyInline image_science paperclip haml
+- script\generate has_attached_photos Class
+    where Class is the class name, that you want to use with has_attached_photos
+
+image_science gem and FreeImage dll for Windows can be found
+in folder 'image_science' in plugin directory (copy FreeImage.dll to C:\Windows\system32)
+
+Note: does NOT require ImageMagick
+
+Usage
+=======
+
+1) Models:
+  - type has_attached_photos statement to the model you want to have attached photos
+2) Controllers:
+  - type shows_attached_photos statement to corresponding controller
+3) Views:
+  - use get_js_and_styles helper in the <HEAD> section of your layout
+  - use view_type_select helper to render the switcher between views
+  - use new_photo and edit_photo helpers passing your form there, to render fields for adding/editing photos
+  - use show_photos/show_comments helpers to render comments and photos in your view
+4) Routs:
+  - add to environment.rb (not needed if generator used)
+    map.resources :attaches
+    map.resources :comments
+5) Css, js, and images:
+  - copy from plugin (generators/has_attached_photos/templates/static_files) to corresponding folders (not needed if generator used)
+6) Migration:
+  - create (not needed if generator used) and run migration
+
+  def self.up
+    create_table :attaches do |t|
+      t.references :Class
+      t.string :photo_file_name
+      t.string :photo_content_type
+      t.integer :photo_file_size
+    end
+    create_table :comments do |t|
+      t.text :comment, :default => ""
+      t.references :attach
+      t.references :Class
+      t.timestamps
+    end
+    add_index :comments, :attach_id
+    add_index :comments, :Class_id
+  end
+
+  def self.down
+  	drop_table :comments
+  	drop_table :attaches
+  end
+
+  * where Class is the class name, that you want to use with has_attached_photos
+  

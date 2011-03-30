@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YaHoPicaso</title>
+    <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override" %>
+  <%= stylesheet_link_tag "common" %>
+
+  <%= get_js_and_styles 'jquery' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="header">
+  	<a href="/"><span id="logo1"><img src="/images/ink_blot.png" title="Go Home"></span></a>
+  	<span id="logo2"><img src="/images/blue_blot.png" title="Go Home"></span>
+      <span class= "h3">YaHoPicaso</span>
+      <div id="user-navigation">
+        <ul class="wat-cf">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a class="logout" href="#">Logout</a></li>
+        </ul>
+      </div>
+      <div id="main-navigation">
+        <ul class="wat-cf">
+          <li class="active"><a href="#">Main Page</a></li>
+          <li class="first"><a href="#">Active</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="/admin">Admin</a></li>
+        </ul>
+      </div>
+    </div>     
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+      <div id="main">
+<%= yield %>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; <%= Time.now.year %> Images Hosting </p>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>
+      <span id="logo3"><img src="/images/blot.png" title="Go Home"></span>
+    </div>    
+  </div>
+</body>
+</html>

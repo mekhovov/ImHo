@@ -1,0 +1,4 @@
+#thumbnails
+  -photos.each do |photo|
+    =image_tag photo.thumbnail_url, {:alt => photo.photo.url, :id => photo.id}
+#preview

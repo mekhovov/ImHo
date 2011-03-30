@@ -1,0 +1,23 @@
+class <%= migration_name.camelize %> < ActiveRecord::Migration
+  def self.up
+    create_table :attaches do |t|
+      t.references :<%= class_name.singularize.underscore %>
+      t.string :photo_file_name
+      t.string :photo_content_type
+      t.integer :photo_file_size      
+    end
+    create_table :comments do |t|
+      t.text :comment, :default => ""
+      t.references :attach
+      t.references :<%= class_name.singularize.underscore %>
+      t.timestamps
+    end
+    add_index :comments, :attach_id
+    add_index :comments, :<%= class_name.singularize.underscore %>_id
+  end
+
+  def self.down
+  	drop_table :comments
+  	drop_table :attaches
+  end
+end

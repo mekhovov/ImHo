@@ -1,0 +1,12 @@
+  <%= render @users %>
+
+
+      <div class="actions-bar wat-cf">
+        <div class="actions">
+        </div>
+	        <%= will_paginate @users  %>
+      </div>
+
+
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

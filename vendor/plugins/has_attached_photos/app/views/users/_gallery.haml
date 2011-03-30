@@ -1,0 +1,7 @@
+-content_for :stylesheet do
+  =stylesheet_link_tag 'spacegallery'
+-content_for :javascripts do
+  =javascript_include_tag 'utils', 'spacegallery'
+#gallery{:class => "spacegallery container"}
+  -photos.each do |photo|
+    =image_tag photo.photo.url, {:class => "gallery_photo", :id => photo.id}

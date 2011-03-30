@@ -1,0 +1,5 @@
+=link_to "", comments_path, {:class => :comments}
+#comments
+  =render :partial => 'comments/comment', :collection => comments
+#new_comment
+  =render :partial => 'comments/form' if user.attaches.any?
