@@ -1,0 +1,199 @@
+
+
+.user_info ul{
+	height:50px;
+  list-style-type:none;
+
+}
+
+.user_info{
+	margin-top:9px;
+}
+
+.user_info img{
+	float:left;
+}
+
+.user_info ul{
+	margin-left: 50px;
+	float:left;
+}
+.inner li{
+    margin-left: 10px;
+	list-style-type:none;
+}
+
+.user_info li{
+	font-size:90%;
+	list-style-type:none;
+}
+
+.user_info li strong{
+	font-size:120%;
+}
+
+.user_info li a{
+	text-decoration:none;
+	
+}
+
+
+
+hr,
+.hr {
+  height: 1px;
+  line-height: 1px;
+  clear: both;
+  margin: 10px 0;
+  background: #0b0906;
+  border-bottom: 1px solid #413b36;
+}
+
+.hr.bigspacing {
+  margin: 25px 0;
+}
+
+
+@font-face {
+  font-family: 'burnstown_dam';
+  src: url("/fonts/burnstown_dam.otf");
+}
+.h2 {
+  font-family:"burnstown_dam";
+	text-shadow: 2px 2px 1px #211f51, 2px 2px #211f51, 1px 1px 10px #a39ffd;
+  font-size:2.9em;
+	font-weight:bold;
+  color: #6461a9;
+
+}
+
+@font-face {
+  font-family: '1942';
+  src: url("/fonts/1942.ttf");
+}
+.h5 {
+    font-family:"1942";
+    text-shadow: 2px 2px 1px #383838, 2px 2px #383838, 1px 1px 10px #383838;
+	font-size:2.5em;
+	font-weight:normal;
+	margin:0 0 1em;
+    color: orange;
+
+}
+
+@font-face {
+  font-family: 'GoodDog';
+  src: url("/fonts/GoodDog.otf");
+}
+.h3 {
+    font-family:"GoodDog";
+    text-shadow: 2px 2px 1px #383838, 2px 2px #383838, 1px 1px 10px #383838;
+	font-size:4.8em;
+	font-weight:bold;
+	margin:0 0 1em;
+    color: orange;
+
+}
+
+@font-face {
+  font-family: 'Qarmic_sans_Abridged';
+  src: url("/fonts/Qarmic_sans_Abridged.ttf");
+}
+.h9 {
+	font-family:"Qarmic_sans_Abridged", forte,"Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+	font-size:1.3em;
+	font-weight:normal;
+	text-shadow:0 1px 1px black;
+	color:#EED77D;
+	margin:0 0 1em;
+}
+.h9 a {
+	text-decoration:none;
+	color:#EED77D;
+}
+.h9 a:hover{
+    color: #56ff56;
+	text-decoration:underline;
+}
+
+a, a:visited {
+	color: white;
+	text-decoration:none;
+	-webkit-transition: color .2s linear;
+}
+a:hover{
+  color: #3e83d8;
+	text-decoration:underline;
+}
+
+
+/* clearfix */
+.clearfix:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix{
+  min-width: 0;		        /* trigger hasLayout for IE7 */
+  display: inline-block;
+  /* \*/ display: block;	/* Hide from IE Mac */
+}
+
+* html .clearfix{
+/* \*/  height: 1%;	    /* Hide from IE Mac */
+}
+
+/*
+.photos_thumbs_container {
+  background: transparent url("/images/comment-shadow.png") no-repeat right bottom;
+}
+*/
+
+.photo_thumb{
+  width: 90px;
+  height: 90px;
+  background: transparent url("/images/avatar_bakground.png") no-repeat center center;
+  float: left;
+  position: relative;
+}
+
+.photo_thumb img{
+  position: absolute;
+  left: 13px;
+  top: 13px;
+  width: 64px;
+  height: 64px;
+}
+
+
+
+
+.comment {
+  background: transparent url("/images/comment-shadow.png") no-repeat right bottom;
+}
+
+
+.avatar{
+  width: 90px;
+  height: 90px;
+  background: transparent url("/images/avatar_bakground.png") no-repeat center center;
+  float: left;
+  position: relative;
+}
+
+.avatar img{
+  position: absolute;
+  left: 13px;
+  top: 13px;
+  width: 64px;
+  height: 64px;
+}
+
+
+.css1 { font-size: 1.0em; }
+  .css2 { font-size: 1.2em; }
+  .css3 { font-size: 1.4em; }
+  .css4 { font-size: 1.6em; }

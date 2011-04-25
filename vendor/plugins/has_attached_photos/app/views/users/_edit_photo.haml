@@ -1,7 +1,8 @@
 #photos
   -f.fields_for :attaches do |attach|
     .thumb{:id => "thumb_#{attach.object.id}", :style => attach.object.new_record? ? 'display:none' : nil}
-      =link_to image_tag(attach.object.thumbnail_url, {:title => "Click to replace"}), "", {:class => 'edit_img', :id => attach.object.id}
+      - unless attach.object.new_record?
+        =link_to image_tag(attach.object.thumbnail_url, {:title => "Click to replace"}), "", {:class => 'edit_img', :id => attach.object.id}
       =attach.check_box "_destroy"
       =attach.label "Del"
     .attach{:id => "attach_#{attach.object.id}", :style => 'display:none' }

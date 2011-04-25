@@ -1,0 +1,35 @@
+!!!
+%html
+  %head
+    %title ImHo: Images Hosting
+    %meta{:charset => "UTF-8"}/
+    / Styles
+    = stylesheet_link_tag "form_style", "common"
+    / libs
+    = javascript_include_tag 'lib/jquery'
+    / JavaScripts
+    = get_js_and_styles 'ini'
+  %body
+    / Header
+    %section.header
+      %form#search-form{:action => "http://www.google.com/search", :method => "GET"}
+        %input#search.query{:name => "q", :type => "text", :value => ""}/
+      %nav#navigation
+        %ul.main
+          %li.selected
+            = link_to "Home", root_path
+          - if current_user
+            %li
+              = link_to "Show profile", user_path(current_user)
+            %li
+              = link_to "Edit profile", edit_user_path(current_user)
+            %li
+              = link_to "Log out", destroy_session_path(current_user)
+          - else
+            %li
+              = link_to "Sign in", new_user_session_path
+      .logo_title ImHo: Images Hosting
+    = render(:partial => 'layouts/logo_intro')
+    / Content
+    = yield
+

@@ -1,0 +1,8 @@
+
+- for photo in user.attaches
+  %span.photo_thumb
+    = link_to image_tag(photo.photo.url(:thumb)), photo.photo.url(:original)
+    %span.comment-count 183
+    %span.like-count 274
+    %span.user-name
+      = link_to (user.name ? user.name : user.email), user_path(user)

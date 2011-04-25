@@ -89,7 +89,6 @@ GEM
     tzinfo (0.3.25)
     warden (1.0.3)
       rack (>= 1.0.0)
-    web-app-theme (0.6.3)
     will_paginate (3.0.pre2)
 
 PLATFORMS
@@ -107,5 +106,4 @@ DEPENDENCIES
   paperclip
   rails (= 3.0.3)
   rails_admin!
-  web-app-theme (>= 0.6.2)
   will_paginate (~> 3.0.pre2)

@@ -1,0 +1,17 @@
+#photos
+  %a{:href => "", :id => "more_attaches"}
+    .btnOrange
+      = image_tag("/images/ico-add_it.png", :alt => "Add photo")
+      Add photo
+  %br
+  .photos_thumbs_container.clearfix
+    -f.fields_for :attaches do |attach|
+      .thumb{:id => "thumb_#{attach.object.id}", :style => attach.object.new_record? ? 'display:none' : nil}
+        - unless attach.object.new_record?
+          %span.photo_thumb
+            =link_to image_tag(attach.object.thumbnail_url, {:title => "Click to replace"}), "", {:class => 'edit_img', :id => attach.object.id}
+            =attach.check_box "_destroy"
+            =attach.label "Del"
+      .attach{:id => "attach_#{attach.object.id}", :style => 'display:none' }
+        =attach.label "Photo:"
+        =attach.file_field :photo

@@ -2,9 +2,21 @@ require 'paperclip'
 
 class Attach < ActiveRecord::Base
   belongs_to :user
-
+  
   has_many :comments
-  has_attached_file :photo, :styles => { :large => "640x480", :medium => "200x200>", :thumb => "100x100>" }
+  has_attached_file :photo, 
+                    :styles => { :large => "640x480", :medium => "300x300>", :thumb => "100x100>" },
+                    :default_style => :medium,
+                    #:url => "/tmp/:attachment/:id/:style/:filename", #"http://some.other.host/stuff/:class/:id_:extension"
+                    :default_url => "/images/no_photo.png"	# copy img to plugin
+                    
+	# has_attached_file :photo,
+  #     :storage => :s3,
+  #     :bucket => 'mybucket',
+  #     :s3_credentials => {
+  #       :access_key_id => ENV['AKIAJRB43QCKATT2VSFQ'],
+  #       :secret_access_key => ENV['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']
+  #     }
 
   def method_missing name, *args
     super

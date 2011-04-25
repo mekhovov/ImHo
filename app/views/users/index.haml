@@ -1,0 +1,23 @@
+%section.content
+  .flash
+    - flash.each do |type, message|
+      %div{:class => "message #{type}"}
+        %p= message
+  =yield
+  / Article top photo
+  %article.article_top_photos
+    %header.title
+      %h2
+        %a{:href => "#"} Users
+      %br/
+      %br/
+    .article_content
+      .photos_thumbs_container.clearfix
+        = render @users
+        = will_paginate @users
+%section.sidebar
+  / Article block comments
+  = render(:partial => 'layouts/article_comments')
+  / Article block tags
+  = render(:partial => 'layouts/article_tags')
+  
