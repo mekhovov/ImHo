@@ -2,6 +2,7 @@ require 'open-uri'
 require 'digest/md5'
 
 class Gravatar
+	# save photo from gravatar
 
   BASE_URL = 'http://www.gravatar.com/avatar/'
 
