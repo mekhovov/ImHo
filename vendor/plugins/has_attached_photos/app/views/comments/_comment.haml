@@ -1,5 +1,6 @@
 %b
   -if comment.user_id.nil?
+    =image_tag "/images/no_avatar.png"
     guest:
   -else
     =image_tag User.find(comment.user_id).avatar.url(:thumb)

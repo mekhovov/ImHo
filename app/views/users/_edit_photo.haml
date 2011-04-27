@@ -1,8 +1,7 @@
 #photos
-  %a{:href => "", :id => "more_attaches"}
-    .btnOrange
-      = image_tag("/images/ico-add_it.png", :alt => "Add photo")
-      Add photo
+  %a{:href => "", :id => "more_attaches", :class => "large medium_w awesome"}
+    Add photo
+  %br
   %br
   .photos_thumbs_container.clearfix
     -f.fields_for :attaches do |attach|

@@ -1,9 +1,10 @@
 / Logo intro
 %section.logo_intro
   %ul.left.tick
-    = link_to (current_user ? edit_user_path(current_user) : new_user_session_path) do
-      #button_upload_photo.btnOrange
-        Upload photo
+    %a{:class => "large medium_w orange awesome", :href => new_user_session_path}
+      Upload photo
+    %a{:class => "large medium_w blue awesome", :href => new_user_session_path}
+      Take a tour
     %li Crop, resize, and rotate in real-time
     %li
       %strong Free!
@@ -11,19 +12,25 @@
   .right
     %ul.right.tick
       - if current_user
+        %a{:class => "large medium_w green awesome", :href => edit_user_path(current_user)}
+          Your page
+        %a{:class => "large medium_w yellow awesome", :href => destroy_session_path(current_user)}
+          Log Out
+        %br
+        %hr
         %span.avatar
-          = image_tag(current_user.avatar.url(:small))
-        %li
-          = link_to "Edit profile", edit_user_path(current_user)
-          (
-          = current_user.attaches.count
-          photos)
-        %li
-          = link_to "Log out", destroy_session_path(current_user)
+          = image_tag(current_user.avatar.url(:thumb))
+        %strong
+          = current_user.name ? current_user.name : current_user.email
+        , 
+        = current_user.attaches.count
+        Photos
+
       -else
-        %a{:href => new_user_session_path}
-          #button_sign_in.btnGreen
-            Sign in
+        %a{:class => "large medium_w green awesome", :href => new_user_session_path}
+          Sign in
+        %a{:class => "large medium_w yellow awesome", :href => new_user_registration_path}
+          Sign Up
         %li Fix your photos in just one click
         %li
           %strong Free!

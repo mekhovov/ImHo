@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #get_view_type
+    get_view_type
   end
 
   def edit

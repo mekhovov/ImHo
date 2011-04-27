@@ -93,5 +93,5 @@ $(document).ready(function(){
   $("#thumbnails img:first").show_full_size();
   $("#thumbnails img").getCommentsWithAjax();
   filmstrip();
-  $('#gallery').spacegallery({loadingClass: 'loading'});
+  //$('#gallery').spacegallery({loadingClass: 'loading'});
 });

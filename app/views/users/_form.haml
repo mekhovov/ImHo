@@ -2,7 +2,7 @@
   .group
     = f.label :avatar, 'Avatar', :class => :label
     .avatar
-      = image_tag current_user.avatar.url(:thumb)
+      = image_tag current_user.avatar.url(:medium)
     %br
     = f.file_field :avatar
   .group
@@ -18,7 +18,5 @@
     %h4 Photos
     %br
     = edit_photo f
-  %div
-    %button.btnGreen{:type => "submit"} Save
-  .group.navform.wat-cf
-    %button.button{:type => "submit"}
+  %button.large.large_w.awesome.green{:type => "submit"} Save
+

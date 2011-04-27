@@ -17,6 +17,7 @@
 }
 #regForm {
     margin-top:20px;
+    height: 280px;
     position: relative;
 }
 #regForm input {
@@ -31,6 +32,15 @@
     border: 1px solid #777;
     -webkit-border-radius: 3px;
 }
+
+
+#regForm button {
+    
+    margin-top:220px;
+    margin-left:98px;
+    
+}
+
 #orRegister{
      text-align: left;
      margin-left: 17px;
@@ -147,7 +157,7 @@
 }
 .modalOverlay {
     background: black;
-    height: 100%;
+    height: auto;
     width: 100%;
     position: fixed;
     left: 0;
@@ -155,8 +165,8 @@
     opacity: 0.6;
 }
 .modalWindow{
-    height:380px;
-    width:360px;
+    height:auto;
+    width:365px;
     position: fixed;
     left:50%;
     top:35%;
@@ -194,3 +204,19 @@
     font-weight: bold;
 }
 
+#error_explanation {
+	margin: 5px 10px;
+	padding-left: 10px;
+	border-bottom: 1px solid #413b36;
+}
+#error_explanation h2 {
+	font-size: 16px;
+	color: orange;
+}
+
+
+#error_explanation ul li {
+	padding-left: 25px;
+	background: url("../images/ico_validation.png") 0px 2px no-repeat;
+  list-style-type: none;
+}

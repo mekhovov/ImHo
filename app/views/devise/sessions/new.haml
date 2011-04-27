@@ -1,6 +1,6 @@
 #regFormMainBlock.modalBlock
   .modalOverlay
-  .modalWindow.ui-draggable{:style => "z-index: 1; left: 921px; top: 337.8000030517578px; "}
+  .modalWindow.ui-draggable
     .modalMessage
       .modalMessageHead
         Sign in
@@ -12,15 +12,17 @@
         or
         %span= link_to "Create", new_user_registration_path
         an account
-      = devise_error_messages!
     #horizontalLine
+    = devise_error_messages!
     #regForm
       = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
         #inputInfo
           %label Email:
           %span#er_email.errors
-          = f.email_field :email
+          %br
+          = f.email_field :email, :size => 25
           %label#lb_password Password:
           %span#er_password.errors
-          = f.password_field :password
-        %button#regUser.regFormButtons.btnGreen{:type => "submit"} Sign In
+          %br
+          = f.password_field :password, :size => 25
+        %button.large.large_w.awesome.green{:type => "submit"} Sign In

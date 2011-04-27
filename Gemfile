@@ -16,3 +16,4 @@ end
 
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "mocha", :group => :test
+

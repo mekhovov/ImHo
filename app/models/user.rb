@@ -14,9 +14,9 @@ class User < ActiveRecord::Base
 		:default_url => ":gravatar_url",
 		:default_style => :thumb,
 		:styles => {
-			:small => "40x40#",
+			:small => "64x64#",
 			:medium => "100x100#",
-			:thumb => "64x64#",
+			:thumb => "40x40#",
 		}
 	)
 

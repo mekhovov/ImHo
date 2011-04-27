@@ -1,6 +1,6 @@
 #regFormMainBlock.modalBlock
   .modalOverlay
-  .modalWindow.ui-draggable{:style => "z-index: 1; left: 921px; top: 337.8000030517578px; "}
+  .modalWindow.ui-draggable
     .modalMessage
       .modalMessageHead
         New user
@@ -12,17 +12,20 @@
         or
         %span Create
         an account
-      = devise_error_messages!
     #horizontalLine
+    = devise_error_messages!
     #regForm
       = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
         #inputInfo
           %label Email:
           %span#er_email.errors
-          = f.email_field :email
+          %br
+          = f.email_field :email, :size => 25
           %label#lb_password Password:
           %span#er_password.errors
-          = f.password_field :password
+          %br
+          = f.password_field :password, :size => 25
+          %br
           %label#conf_password Password confirm:
-          = f.password_field :password_confirmation
-        %button#regUser.regFormButtons.btnOrange.createNewAccount{:type => "submit"} Create account
+          = f.password_field :password_confirmation, :size => 25
+        %button.large.large_w.awesome.yellow{:type => "submit"} Create account
