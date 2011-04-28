@@ -80,8 +80,8 @@ module HavePhotos
       render :partial => 'new_photo', :locals => {:f => form}
     end
     
-    def edit_photo form
-      render :partial => 'edit_photo', :locals => {:f => form}
+    def edit_user_photos form
+      render :partial => 'edit_user_photos', :locals => {:f => form}
     end
 
     def get_js_and_styles jquery_file_name

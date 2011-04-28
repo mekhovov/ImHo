@@ -1,0 +1,48 @@
+
+
+svg {
+	margin: 0;
+	padding: 0;
+}
+
+section{
+    background-color: #DFE9F5;
+}
+
+section .img_editor {
+	background: -webkit-linear-gradient(#FBFDFF, #DCE7F5);
+	border: 1px solid #BAC9DB;
+	position: absolute;
+}
+
+#canvas {
+	margin: -1px 0 -3px;
+}
+
+#toolbar {
+	width: 53px;
+}
+
+#transformation {
+	width: 103px;
+}
+
+#colorpicker {
+	width: 300px;
+}
+
+#file {
+	width: 53px;
+}
+
+#history {
+	width: 53px;
+}
+
+#panel {
+	width: 203px;
+}
+
+.clear {
+	clear: both;
+}

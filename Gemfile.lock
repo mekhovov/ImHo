@@ -1,11 +1,3 @@
-GIT
-  remote: http://github.com/sferik/rails_admin.git
-  revision: 53c77488c53463d2a1c6b0a24751c72cd625fc6b
-  specs:
-    rails_admin (0.0.1)
-      builder (~> 2.1.0)
-      rails (~> 3.0.3)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -38,31 +30,29 @@ GEM
     activesupport (3.0.3)
     arel (2.0.9)
     bcrypt-ruby (2.1.4)
-    bcrypt-ruby (2.1.4-x86-mswin32)
     builder (2.1.2)
-    devise (1.2.1)
+    devise (1.3.3)
       bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    haml (3.0.25)
+    haml (3.1.1)
     hpricot (0.8.4)
-    hpricot (0.8.4-x86-mswin32)
     i18n (0.5.0)
-    mail (2.2.15)
+    mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
     mocha (0.9.12)
-    mysql (2.8.1-x86-mswin32)
+    mysql2 (0.2.6)
     nifty-generators (0.4.6)
     orm_adapter (0.0.4)
-    paperclip (2.3.8)
-      activerecord
-      activesupport
+    paperclip (2.3.11)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
     polyglot (0.3.1)
     rack (1.2.2)
     rack-mount (0.6.14)
@@ -77,6 +67,7 @@ GEM
       activesupport (= 3.0.3)
       bundler (~> 1.0)
       railties (= 3.0.3)
+    rails_admin (0.0.0)
     railties (3.0.3)
       actionpack (= 3.0.3)
       activesupport (= 3.0.3)
@@ -86,14 +77,13 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    tzinfo (0.3.25)
+    tzinfo (0.3.27)
     warden (1.0.3)
       rack (>= 1.0.0)
     will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
-  x86-mswin32
 
 DEPENDENCIES
   bcrypt-ruby
@@ -101,9 +91,9 @@ DEPENDENCIES
   haml
   hpricot
   mocha
-  mysql
+  mysql2 (= 0.2.6)
   nifty-generators
   paperclip
   rails (= 3.0.3)
-  rails_admin!
+  rails_admin
   will_paginate (~> 3.0.pre2)

@@ -1,0 +1,19 @@
+.window-title {
+	margin-bottom: -2px;
+	border-bottom: 1px solid #BAC9DB;
+	cursor: move;
+}
+
+.button {
+	float: left;
+	margin: 0 0 1px 1px;
+	cursor: pointer;
+}
+
+.trackbar {
+	margin: 5px 0 3px 5px;
+}
+
+.colorpicker {
+	margin: -1px 0 -3px;
+}

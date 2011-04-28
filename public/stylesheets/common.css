@@ -526,28 +526,36 @@ hr {
   padding: 1px 0 1px 22px;
   margin: 85px 5px 0 2px;
   color: #444;
+
 }
 
-.like-count {
+.like-count, .like-count.existing {
   position: absolute;
-	background: url("../images/like-count.png") center left no-repeat;
-  padding: 1px 0 1px 22px;
+  background: url("../images/star_empty.png") center left no-repeat;
+  padding: 1px 0 1px 20px;
   margin: 85px 5px 0 52px;
   color: #444;
+
 }
 .like-count.existing {
-	background: url("../images/star.png") top left no-repeat;
+	background: url("../images/star.png") center left no-repeat;
+
 }
 
 .user-name {
   position: absolute;
   background: url("../images/ico-author.png") center left no-repeat;
   padding: 1px 0 1px 22px;
-  margin: 100px 5px 0 2px;
+  margin: -10px 5px 0 2px;
   color: #444;
+    
 }
 
-
+.photo-edit {
+  position: absolute;
+  padding: 1px 0 1px 22px;
+  margin: 60px 50px 0 35px;
+}
 /*****************
 * Tables
 *****************/
