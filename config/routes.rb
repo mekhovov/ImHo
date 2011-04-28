@@ -7,5 +7,5 @@ YaHoPicaso::Application.routes.draw do
   resources :users
   resources :attaches
   resources :comments
-
+  resources :likes
 end

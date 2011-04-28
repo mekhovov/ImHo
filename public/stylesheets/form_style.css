@@ -28,6 +28,7 @@
     margin-bottom: 20px;
     background: url("/images/20p-black.png") repeat;
 }
+
 #regForm input:focus {
     border: 1px solid #777;
     -webkit-border-radius: 3px;
@@ -39,6 +40,15 @@
     margin-top:220px;
     margin-left:98px;
     
+}
+
+
+#new_comment input#comment_submit{
+  padding: 5px;
+	-webkit-border-radius: 3px;
+}
+#new_comment textarea {
+	padding: 5px;
 }
 
 #orRegister{

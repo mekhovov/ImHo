@@ -1,2 +1,14 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+jQuery.ajaxSetup({
+  'beforeSend': function (xhr) {
+    xhr.setRequestHeader("Accept", "text/javascript")
+  }
+ });
+
+// Bind
+$(document).ready(function(){
+  $("span.like-button").click (function() {
+		var form = $(this).parents("form.new_like");
+		$.post(form.attr("action"), form.serialize(), null, "script");
+		return false;
+	})
+});

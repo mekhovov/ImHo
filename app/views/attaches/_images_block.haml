@@ -1,0 +1,10 @@
+%article.article_top_photos
+  %header.title
+    %h2
+      = link_to title, root_url
+    %br/
+    %br/
+  .article_content
+    .photos_thumbs_container.clearfix
+      = render photos
+      = will_paginate photos if photos.respond_to?(:total_pages)

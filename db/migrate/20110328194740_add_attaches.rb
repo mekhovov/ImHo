@@ -4,7 +4,9 @@ class AddAttaches < ActiveRecord::Migration
       t.references :user
       t.string :photo_file_name
       t.string :photo_content_type
-      t.integer :photo_file_size      
+      t.integer :photo_file_size
+      
+      t.timestamps
     end
 
   end

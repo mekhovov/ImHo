@@ -7,8 +7,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :avatar, :attaches_attributes
 
   has_attached_photos
-
-  accepts_nested_attributes_for :attaches, :allow_destroy => true
+  has_many :likes, :dependent => :destroy
+  
+  accepts_nested_attributes_for :attaches, :allow_destroy => true, :reject_if =>  proc{ |att| att['photo'].blank?}
 
 	has_attached_file(:avatar,
 		:default_url => ":gravatar_url",
@@ -35,6 +36,10 @@ class User < ActiveRecord::Base
   def gravatar_url(size = 200)
     hash = Digest::MD5.hexdigest(email.downcase.strip)[0..31]
     "http://www.gravatar.com/avatar/#{hash}?s=#{size}.png"
+  end
+
+  def full_name
+    name.blank? ? email : name
   end
 
 end

@@ -530,10 +530,13 @@ hr {
 
 .like-count {
   position: absolute;
-  background: url("../images/like-count.png") center left no-repeat;
+	background: url("../images/like-count.png") center left no-repeat;
   padding: 1px 0 1px 22px;
   margin: 85px 5px 0 52px;
   color: #444;
+}
+.like-count.existing {
+	background: url("../images/star.png") top left no-repeat;
 }
 
 .user-name {
@@ -664,8 +667,6 @@ input#search {
 	.small_w.awesome, .small_w.awesome:visited 			{ width: 90px; }
 	.medium_w.awesome, .medium_w.awesome:visited 		{ width: 130px; }	
 	.large_w.awesome, .large_w.awesome:visited 			{ width: 160px; }
-
-
 
 
 

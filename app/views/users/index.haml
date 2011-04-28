@@ -4,17 +4,9 @@
       %div{:class => "message #{type}"}
         %p= message
   =yield
-  / Article top photo
-  %article.article_top_photos
-    %header.title
-      %h2
-        %a{:href => "#"} Users
-      %br/
-      %br/
-    .article_content
-      .photos_thumbs_container.clearfix
-        = render @users
-        = will_paginate @users
+  - {"Top rated" => @top_rated, "Recently added" => @new_added}.each_pair do |title, elems|
+    = render :partial => "attaches/images_block", :locals => {:title => title, :photos => elems}
+
 %section.sidebar
   / Article block comments
   = render(:partial => 'layouts/article_comments')

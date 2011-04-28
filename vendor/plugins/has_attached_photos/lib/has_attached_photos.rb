@@ -17,12 +17,7 @@ module HavePhotos
         def self.included(base)
           base.class_eval do
             has_many :attaches, :include => :comments
-            
-            accepts_nested_attributes_for :attaches, :allow_destroy => true, :reject_if =>  proc{ |att| att['photo'].blank?}
 
-            def after_initialize #build new attach only for controller action :new or if attaches empty
-              self.attaches.build if (self.new_record? && self.attributes.values.find_all{|val| !val.blank?}.empty?) || self.attaches.empty?
-            end
           end
         end 
       end

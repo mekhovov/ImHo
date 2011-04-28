@@ -7,21 +7,17 @@
   %article
     %header.title
       %h2
-        = link_to "#{@user.name ? @user.name : @user.email}", user_path(@user)
+        = link_to @user.full_name, user_path(@user)
       %br/
       %br/
     .article_content
-      %article
-        .article_content
-          #preview
-          = show_comments @user, @comments
+      - unless @user.attaches.count.zero?
+        %article
+          .article_content
+            #preview
+            = show_comments @user, @comments
       .photos_thumbs_container.clearfix#thumbnails
-        - for photo in @user.attaches
-          %span.photo_thumb
-            /= link_to image_tag(photo.photo.url(:thumb)), photo.photo.url(:original)
-            =image_tag photo.photo.url(:thumb), {:alt => photo.photo.url, :id => photo.id}
-            %span.comment-count 183
-            %span.like-count 274
-            %span.user-name
-              = link_to (@user.name ? @user.name : @user.email), user_path(@user)
+        = render :partial => "user", :object => @user
+        
+
 

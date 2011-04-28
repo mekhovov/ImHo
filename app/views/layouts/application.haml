@@ -6,7 +6,8 @@
     / Styles
     = stylesheet_link_tag "form_style", "common"
     / JavaScripts
-    = get_js_and_styles 'lib/jquery'
+    = get_js_and_styles 'jquery'
+    = javascript_include_tag 'application'
   %body
     / Header
     %section.header

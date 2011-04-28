@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   shows_attached_photos
   
   def index
-    @users = User.paginate :page => params[:page], :per_page => 5, :order => 'updated_at DESC'
+    @top_rated = Attach.all.sort_by {|att| att.likes.count}.reverse.paginate :page => params[:page], :per_page => 7
+    @new_added = Attach.order('updated_at DESC').limit(7)
     get_index_view_type
   end
 
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @user.attaches.build
   end
 
   def update
