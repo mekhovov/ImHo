@@ -1,0 +1,81 @@
+/ Stylesheets
+%link{:href => "/stylesheets/editor_common.css", :rel => "stylesheet", :type => "text/css"}/
+%link{:href => "/stylesheets/gui.css", :rel => "stylesheet", :type => "text/css"}/
+/ Libraries
+%script{:src => "/libs/jquery.js", :type => "text/javascript"}
+%script{:src => "/libs/jquery.ui.js", :type => "text/javascript"}
+%script{:src => "/libs/jquery.router.js", :type => "text/javascript"}
+%script{:src => "/libs/jquery.shortcuts.js", :type => "text/javascript"}
+%script{:src => "/libs/raphael.js", :type => "text/javascript"}
+/ Engine
+%script{:src => "/javascripts/icore/tools/brush.js", :type => "text/javascript"}
+%script{:src => "/javascripts/icore/tools/eraser.js", :type => "text/javascript"}
+%script{:src => "/javascripts/icore/tools/resize.js", :type => "text/javascript"}
+%script{:src => "/javascripts/icore/tools/rotate.js", :type => "text/javascript"}
+%script{:src => "/javascripts/icore/icore_canvas.js", :type => "text/javascript"}
+%script{:src => "/javascripts/icore/icore_mouse.js", :type => "text/javascript"}
+%script{:src => "/javascripts/icore/icore_tool.js", :type => "text/javascript"}
+%script{:src => "/javascripts/icore/icore_file.js", :type => "text/javascript"}
+%script{:src => "/javascripts/icore/icore_history.js", :type => "text/javascript"}
+%script{:src => "/javascripts/icore/icore_helper.js", :type => "text/javascript"}
+%script{:src => "/javascripts/icore/icore.js", :type => "text/javascript"}
+/ GUI
+%script{:src => "/javascripts/gui/controls/window.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/controls/button.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/controls/trackbar.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/controls/textbox.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/controls/colorpicker_a.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/toolbar/button_brush.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/toolbar/button_eraser.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/transformation/button_resize.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/transformation/button_rotate.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/colorpicker/colorpicker.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/file/button_save.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/history/button_undo.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/panel/panel_brush.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/panel/panel_eraser.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/panel/panel_resize.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/panel/panel_rotate.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/gui_canvas.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/gui_toolbar.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/gui_transformation.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/gui_colorpicker.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/gui_file.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/gui_history.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/gui_panel.js", :type => "text/javascript"}
+%script{:src => "/javascripts/gui/gui.js", :type => "text/javascript"}
+/ Router
+%script{:src => "/javascripts/router.js", :type => "text/javascript"}
+
+/ Canvas
+%section.img_editor
+  %canvas#canvas{:height => "500", :width => "600"}
+
+/ Toolbars
+%section#toolbar.img_editor
+%section#transformation.img_editor
+%section#colorpicker.img_editor
+%section#file.img_editor
+%section#history.img_editor
+%section#panel.img_editor
+
+/ Constructor
+:javascript
+      var Config = {
+        'CANVAS': 'canvas',
+        'TOOLBAR': 'toolbar',
+        'TRANSFORMATION': 'transformation',
+        'COLORPICKER': 'colorpicker',
+        'FILE': 'file',
+        'HISTORY': 'history',
+        'PANEL': 'panel'
+      }
+      window.onload = function() {
+        new ICore();
+        new GUI();
+        new Router();
+                ICore.openImage("#{@edit_photo.photo.url(:original)}");
+  }
+
+
+

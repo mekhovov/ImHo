@@ -6,3 +6,7 @@
     %span.like-count{:class => like_class(attach.id)}= attach.likes.count
   %span.user-name
     = link_to attach.user.full_name, user_path(attach.user)
+  - if current_user && current_user.id == attach.user.id
+    %span.photo-edit
+      %a{:class => "small green awesome", :href => edit_attach_path(attach.id) }
+        edit
