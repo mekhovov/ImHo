@@ -1,1 +1,2 @@
-= render :partial => "attaches/attach", :collection => user.attaches 
+= render :partial => "attaches/attach", :collection => @user_photos
+= will_paginate @user_photos

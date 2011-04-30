@@ -1,14 +1,14 @@
-%section.content
-  .flash
-    - flash.each do |type, message|
-      %div{:class => "message #{type}"}
-        %p= message
-  / Article top photo
-  %article
-    %header.title
-      %h2
-        = link_to "#{@user.name ? @user.name : @user.email}", user_path(@user)
-      %br/
-      %br/
-    .article_content
-      = render :partial => "form"
+#regFormMainBlock.modalBlock
+  .modalOverlay
+  .modalWindow.ui-draggable
+    .modalMessage
+      .modalMessageHead
+        Upload Photo
+        %a{:href => root_path}
+          #modalCloseCross.modalClose
+    .flash
+      - flash.each do |type, message|
+        %div{:class => "message #{type}"}
+          %p= message
+      #uploadForm
+        = render :partial => "form_upload_photo"

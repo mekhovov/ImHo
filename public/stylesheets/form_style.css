@@ -43,6 +43,46 @@
 }
 
 
+
+#uploadForm label, input{
+    margin-bottom: 10px;
+}
+#uploadForm {
+    margin-top:10px;
+    min-height: 180px;
+    height: auto;
+    position: relative;
+}
+#uploadForm input {
+    font-size: 12pt;
+    color: #aaa;
+    border: 2px dashed #363841;
+    -webkit-border-radius: 3px;
+    margin-bottom: 10px;
+    background: url("/images/20p-black.png") repeat;
+}
+
+#uploadForm input:focus {
+    border: 1px solid #777;
+    -webkit-border-radius: 3px;
+}
+
+#uploadForm #more_attaches {
+    margin-left:98px;
+    margin-top:70px;
+}
+#uploadForm .attach {
+    margin-left:20px;
+}
+#uploadForm button {
+
+    margin-top:10px;
+    margin-bottom:20px;
+    margin-left:98px;
+
+}
+
+
 #new_comment input#comment_submit{
   padding: 5px;
 	-webkit-border-radius: 3px;

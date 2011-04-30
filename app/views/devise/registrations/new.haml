@@ -20,12 +20,12 @@
           %label Email:
           %span#er_email.errors
           %br
-          = f.email_field :email, :size => 25
+          = f.email_field :email, :size => 22
           %label#lb_password Password:
           %span#er_password.errors
           %br
-          = f.password_field :password, :size => 25
+          = f.password_field :password, :size => 22
           %br
           %label#conf_password Password confirm:
-          = f.password_field :password_confirmation, :size => 25
+          = f.password_field :password_confirmation, :size => 22
         %button.large.large_w.awesome.yellow{:type => "submit"} Create account

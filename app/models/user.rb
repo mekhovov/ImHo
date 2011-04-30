@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_attached_photos
   has_many :likes, :dependent => :destroy
   
-  accepts_nested_attributes_for :attaches, :allow_destroy => true, :reject_if =>  proc{ |att| att['photo'].blank?}
+  accepts_nested_attributes_for :attaches, :allow_destroy => true#, :reject_if =>  proc{ |att| att['photo'].blank?}
 
 	has_attached_file(:avatar,
 		:default_url => ":gravatar_url",

@@ -1,0 +1,24 @@
+= form_for @user, :url => user_path, :html => { :class => :form, :multipart => true  } do |f|
+  #photos
+    .photos_thumbs_container.clearfix
+      -f.fields_for :attaches do |attach|
+        .thumb{:id => "thumb_#{attach.object.id}", :style => attach.object.new_record? ? 'display:none' : nil}
+        .attach{:id => "attach_#{attach.object.id}", :style => 'display:none' }
+          =attach.label "Photo:"
+          =attach.file_field :photo
+      %br
+    %a{:href => "", :id => "more_attaches", :class => "large medium_w red awesome"}
+      Add photo
+    %button.large.large_w.awesome.green{:type => "submit"} Save
+
+:javascript
+  var name = $(".attach:last input").attr("name");
+  var num = name.match(/\[(\d+)\]\[.+\]$/)[1];
+
+  $(".attach:last").after($(".attach:last").clone());
+  $(".attach:last input").attr("name", name.replace(num, parseInt(num)+1));
+  $(".attach:last input").val("");
+  $(".attach:last").show();
+
+
+

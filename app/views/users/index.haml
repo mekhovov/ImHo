@@ -1,3 +1,4 @@
+= render(:partial => 'layouts/logo_intro')
 %section.content
   .flash
     - flash.each do |type, message|
@@ -11,5 +12,5 @@
   / Article block comments
   = render(:partial => 'layouts/article_comments')
   / Article block tags
-  = render(:partial => 'layouts/article_tags')
+  /= render(:partial => 'layouts/article_tags')
   

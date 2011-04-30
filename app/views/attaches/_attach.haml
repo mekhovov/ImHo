@@ -1,5 +1,5 @@
 %span.photo_thumb
-  = image_tag attach.photo.url(:thumb), {:alt => attach.photo.url, :id => attach.id}
+  = link_to image_tag( attach.photo.url(:thumb), {:alt => attach.photo.url, :id => attach.id}),  user_path(attach.user)
   %span.comment-count= attach.comments.count
   = form_for Like.new(:attach => attach), :html => {:id => "new_like_#{attach.id}"} do |f|
     = f.hidden_field :attach_id

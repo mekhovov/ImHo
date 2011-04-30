@@ -525,9 +525,9 @@ hr {
   background: url("../images/comment-count.png") center left no-repeat;
   padding: 1px 0 1px 22px;
   margin: 85px 5px 0 2px;
-  color: #444;
 
 }
+
 
 .like-count, .like-count.existing {
   position: absolute;
@@ -630,6 +630,24 @@ input#search {
 }
 
 
+
+
+.article_users_photos .comment-count, .article_users_photos .like-count, .article_users_photos .like-count.existing {
+    color: #999;
+}
+
+.article_block_comments span.photo_thumb {
+      margin: 0;
+    
+}
+.article_block_comments span.photo_thumb img {
+  width: 64px;
+  height: 64px;
+}
+
+.article_block_comments hr{
+    background: none;
+}
 
 /*****************
 * buttons

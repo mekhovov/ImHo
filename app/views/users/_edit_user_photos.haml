@@ -1,16 +1,24 @@
 #photos
-  %a{:href => "", :id => "more_attaches", :class => "large medium_w awesome"}
-    Add photo
-  %br
-  %br
-  .photos_thumbs_container.clearfix
+  .photos_thumbs_container.clearfix#thumbnails
     -f.fields_for :attaches do |attach|
       .thumb{:id => "thumb_#{attach.object.id}", :style => attach.object.new_record? ? 'display:none' : nil}
         - unless attach.object.new_record?
           %span.photo_thumb
-            =link_to image_tag(attach.object.thumbnail_url, {:title => "Click to replace"}), "", {:class => 'edit_img', :id => attach.object.id}
+            = link_to image_tag(attach.object.thumbnail_url, {:alt => attach.object.photo.url, :id => attach.object.id}), "", {:class => 'edit_img', :id => attach.object.id}
+            %span.comment-count= attach.object.comments.count
+            = form_for Like.new(:attach => attach.object), :html => {:id => "new_like_#{attach.object.id}"} do |f|
+              = f.hidden_field :attach_id
+              %span.like-count{:class => like_class(attach.object.id)}= attach.object.likes.count
+            %span.photo-edit
+              %a{:class => "small green awesome", :href => edit_attach_path(attach.object.id) }
+                edit
             =attach.check_box "_destroy"
-            =attach.label "Del"
+            =attach.label "Delete"
       .attach{:id => "attach_#{attach.object.id}", :style => 'display:none' }
         =attach.label "Photo:"
         =attach.file_field :photo
+  %br
+  %a{:href => "", :id => "more_attaches", :class => "large medium_w red awesome"}
+    Add photo
+  %br
+  %br
