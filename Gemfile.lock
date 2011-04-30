@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/ccabot/rails_admin.git
+  revision: c3ee866f985c09336aaf33eaf3c2b7779267f2bd
+  specs:
+    rails_admin (0.0.1)
+      builder (~> 2.1.0)
+      rails (~> 3.0.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -67,7 +75,6 @@ GEM
       activesupport (= 3.0.3)
       bundler (~> 1.0)
       railties (= 3.0.3)
-    rails_admin (0.0.0)
     railties (3.0.3)
       actionpack (= 3.0.3)
       activesupport (= 3.0.3)
@@ -95,5 +102,5 @@ DEPENDENCIES
   nifty-generators
   paperclip
   rails (= 3.0.3)
-  rails_admin
+  rails_admin!
   will_paginate (~> 3.0.pre2)

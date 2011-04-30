@@ -8,4 +8,10 @@ YaHoPicaso::Application.routes.draw do
   resources :attaches
   resources :comments
   resources :likes
+
+  scope "admin" do
+    resources :users, :path => "users"
+  end
+
 end
+
