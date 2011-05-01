@@ -45,7 +45,7 @@ a img{
 body {
 	color:#fcfcfc;
 	background-color: 333642; /* #383838; */
-	min-width: 1050px;
+	min-width: 1260px;
 	font-size: 14px;
 	background: #333642 url("../images/background.png") top left repeat-x;
 
@@ -161,7 +161,6 @@ float: left;
 
 ul.right, ul.left {
   margin-top: 35px;
-  position: absolute;
   color: #8D90A4;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 18px;
@@ -171,11 +170,13 @@ ul.right, ul.left {
 }
 
 ul.right {
-  right: 40px;
+    float:right;
+    margin-right: 30px;
 }
 
 ul.left {
-  left: 40px;
+  float:left;
+  margin-left: 30px;
 
 }
 
@@ -231,22 +232,24 @@ ul.right li, ul.left li {
 *****************/
 .content, .sidebar {
 	position: relative;
-	margin-top: 20px;
+	margin-top: 19px;
 }
 
 .content {
 	float: left;
 	padding-left: 30px;
-	min-width: 780px;
-	width: auto;
+	width: 935px;
 
+}
+
+.pagination {
+    float:left;
 }
 
 .sidebar {
 	float: right;
 	padding-right: 30px;
-	min-width: 200px;
-	width: auto;
+	width: 235px;
 }
 
 article {
@@ -350,8 +353,8 @@ article ul{
 * Footer
 *****************/
 footer {
-	height: 40px;
-	text-align:center;
+  height: 40px;
+  text-align:center;
   font-size:0.825em;
   background: #2e303c;
 }
@@ -430,6 +433,11 @@ hr {
   margin-left: auto;
   margin-right: auto;
   width: 350px;
+}
+.logo_img {
+    margin-left: 35.1%;
+   
+    padding-top: 10px;
 }
 
 @font-face {
@@ -548,7 +556,9 @@ hr {
   padding: 1px 0 1px 22px;
   margin: -10px 5px 0 2px;
   color: #444;
-    
+  width: 80px;
+  overflow-x: hidden;
+  
 }
 
 .photo-edit {
