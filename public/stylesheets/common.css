@@ -238,7 +238,7 @@ ul.right li, ul.left li {
 .content {
 	float: left;
 	padding-left: 30px;
-	width: 935px;
+	width: 815px;
 
 }
 
@@ -249,7 +249,7 @@ ul.right li, ul.left li {
 .sidebar {
 	float: right;
 	padding-right: 30px;
-	width: 235px;
+	width: 355px;
 }
 
 article {
