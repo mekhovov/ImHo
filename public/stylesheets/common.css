@@ -682,7 +682,7 @@ input#search {
 
 	.awesome:hover							{ background-color: #111; color: #fff; text-decoration: none;}
 	.awesome:active							{ top: 1px; }
-	.small.awesome, .small.awesome:visited 			{ font-size: 11px; padding: ; }
+	.small.awesome, .small.awesome:visited 			{ font-size: 11px; }
 	.awesome, .awesome:visited,
 	.medium.awesome, .medium.awesome:visited 		{ font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); }
 	.large.awesome, .large.awesome:visited 			{ font-size: 14px; padding: 8px 14px 9px; }
@@ -705,8 +705,13 @@ input#search {
 	.large_w.awesome, .large_w.awesome:visited 			{ width: 160px; }
         #comment_submit {
                 font-size: 14px; padding: 8px 14px 9px;
-                background-color: #111; color: #fff; text-decoration: none;
+                color: #fff; text-decoration: none;
                 background-color: #2daebf;
+                font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+                -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
          #comment_submit:hover {
                  background-color: #007d9a;

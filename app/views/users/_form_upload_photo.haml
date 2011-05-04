@@ -12,9 +12,15 @@
     %button.large.large_w.awesome.green{:type => "submit"} Save
 
 :javascript
+  $("input[type=file]").filestyle({
+            image: "/images/browse.jpg",
+            imageheight : 32,
+            imagewidth : 94,
+            width : 226
+         });
   var name = $(".attach:last input").attr("name");
   var num = name.match(/\[(\d+)\]\[.+\]$/)[1];
-
+  
   $(".attach:last").after($(".attach:last").clone());
   $(".attach:last input").attr("name", name.replace(num, parseInt(num)+1));
   $(".attach:last input").val("");
