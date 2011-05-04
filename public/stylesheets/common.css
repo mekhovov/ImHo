@@ -700,10 +700,17 @@ input#search {
 	.yellow.awesome, .yellow.awesome:visited		{ background-color: #ffb515; }
 	.yellow.awesome:hover							{ background-color: #fc9200; }
 	
-	.small_w.awesome, .small_w.awesome:visited 			{ width: 90px; }
-	.medium_w.awesome, .medium_w.awesome:visited 		{ width: 130px; }	
+	.small_w.awesome, .small_w.awesome:visited 			{ width: 80px; }
+	.medium_w.awesome, .medium_w.awesome:visited 		        { width: 130px; }
 	.large_w.awesome, .large_w.awesome:visited 			{ width: 160px; }
-
+        #comment_submit {
+                font-size: 14px; padding: 8px 14px 9px;
+                background-color: #111; color: #fff; text-decoration: none;
+                background-color: #2daebf;
+        }
+         #comment_submit:hover {
+                 background-color: #007d9a;
+        }
 
 
 
