@@ -12,7 +12,10 @@
 html, body {
 	height:100%;
 }
-
+.wrapper {
+    margin: 0 auto;
+    width:1250px;
+}
 /* Tell the browser to render HTML 5 elements as block */
 header, footer, section, aside, nav, article {
 	display: block;
@@ -716,6 +719,10 @@ input#search {
          #comment_submit:hover {
                  background-color: #007d9a;
         }
+        .attach{
+            width:100%;
+            float: right;
+}
 
 
 

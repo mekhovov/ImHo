@@ -1,67 +1,68 @@
 - unless current_user && current_user.id == @user.id
   = render(:partial => 'layouts/logo_photos')
-%section.content
-  .flash
-    - flash.each do |type, message|
-      %div{:class => "message #{type}"}
-        %p= message
-  / Article photos thumb
-  %article
-    %header.title
-      %h2
-        = link_to "Photos by #{@user.full_name}", user_path(@user)
-      %br/
-      %br/
-    .article_content
-      - unless @user.attaches.count.zero?
-        #preview
-        = show_comments @user, @comments
-%section.sidebar
-  %article.article_block_tags
-    %header.title
-      %h2
-        %a{:href => "#"} You can do
-    %br
-    %br
-    %br
-    .article_content
-      %ul.right.tick
-      - if current_user
-        %span.avatar
-          = image_tag(current_user.avatar.url(:thumb))
-        %strong
-          = current_user.full_name
-        ,
-        = current_user.attaches.count
-        Photos
-        %br
-        %br
-        %a{:class => "large small_w blue awesome", :href =>  edit_user_path(current_user)}
-          Upload photo
-        %a{:class => "large small_w green awesome", :href => user_path(current_user)}
-          Your page
-        %a{:class => "large small_w yellow awesome", :href => destroy_session_path(current_user)}
-          Log Out
-      -else
-        %a{:class => "large medium_w green awesome", :href => new_user_session_path}
-          Sign in
-        %a{:class => "large medium_w yellow awesome", :href => new_user_registration_path}
-          Sign Up
-        %br
-        %br
-        %a{:class => "large medium_w orange awesome", :href => new_user_session_path}
-          Upload photo
-        %a{:class => "large medium_w blue awesome", :href => new_user_session_path}
-          Take a tour
-      %br
-      %br
-  - if current_user && current_user.id == @user.id
-    %article.article_users_photos
+.wrapper
+  %section.content
+    .flash
+      - flash.each do |type, message|
+        %div{:class => "message #{type}"}
+          %p= message
+    / Article photos thumb
+    %article
       %header.title
         %h2
-          %a{:href => "#"} Manage my data
-      .article_content
-        = render :partial => "form_photos"
+          = link_to "Photos by #{@user.full_name}", user_path(@user)
         %br/
+        %br/
+      .article_content
+        - unless @user.attaches.count.zero?
+          #preview
+          = show_comments @user, @comments
+  %section.sidebar
+    %article.article_block_tags
+      %header.title
+        %h2
+          %a{:href => "#"} You can do
+      %br
+      %br
+      %br
+      .article_content
+        %ul.right.tick
+        - if current_user
+          %span.avatar
+            = image_tag(current_user.avatar.url(:thumb))
+          %strong
+            = current_user.full_name
+          ,
+          = current_user.attaches.count
+          Photos
+          %br
+          %br
+          %a{:class => "large small_w blue awesome", :href =>  edit_user_path(current_user)}
+            Upload photo
+          %a{:class => "large small_w green awesome", :href => user_path(current_user)}
+            Your page
+          %a{:class => "large small_w yellow awesome", :href => destroy_session_path(current_user)}
+            Log Out
+        -else
+          %a{:class => "large medium_w green awesome", :href => new_user_session_path}
+            Sign in
+          %a{:class => "large medium_w yellow awesome", :href => new_user_registration_path}
+            Sign Up
+          %br
+          %br
+          %a{:class => "large medium_w orange awesome", :href => new_user_session_path}
+            Upload photo
+          %a{:class => "large medium_w blue awesome", :href => new_user_session_path}
+            Take a tour
+        %br
+        %br
+    - if current_user && current_user.id == @user.id
+      %article.article_users_photos
+        %header.title
+          %h2
+            %a{:href => "#"} Manage my data
+        .article_content
+          = render :partial => "form_photos"
+          %br/
 
 
