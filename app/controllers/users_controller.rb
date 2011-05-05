@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_photos = @user.attaches.paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC'
+    @user_photos = @user.attaches.paginate :page => params[:page], :per_page => 9, :order => 'created_at DESC'
     @user.attaches.build
     get_view_type
   end
