@@ -1,16 +1,17 @@
 = render(:partial => 'layouts/logo_intro')
-%section.content
-  .flash
-    - flash.each do |type, message|
-      %div{:class => "message #{type}"}
-        %p= message
-  =yield
-  - {"Top rated" => @top_rated, "Recently added" => @new_added}.each_pair do |title, elems|
-    = render :partial => "attaches/images_block", :locals => {:title => title, :photos => elems}
+.wrapper
+  %section.content
+    .flash
+      - flash.each do |type, message|
+        %div{:class => "message #{type}"}
+          %p= message
+    =yield
+    - {"Top rated" => @top_rated, "Recently added" => @new_added}.each_pair do |title, elems|
+      = render :partial => "attaches/images_block", :locals => {:title => title, :photos => elems}
 
-%section.sidebar
-  / Article block comments
-  = render(:partial => 'layouts/article_comments')
-  / Article block tags
-  /= render(:partial => 'layouts/article_tags')
+  %section.sidebar
+    / Article block comments
+    = render(:partial => 'layouts/article_comments')
+    / Article block tags
+    /= render(:partial => 'layouts/article_tags')
   
