@@ -709,6 +709,7 @@ input#search {
 	.small_w.awesome, .small_w.awesome:visited 			{ width: 80px; }
 	.medium_w.awesome, .medium_w.awesome:visited 		        { width: 130px; }
 	.large_w.awesome, .large_w.awesome:visited 			{ width: 160px; }
+        .medium1_w.awesome, .large_w.awesome:visited 			{ width: 135px; }
         #comment_submit {
                 font-size: 14px; padding: 8px 14px 9px;
                 color: #fff; text-decoration: none;
@@ -750,6 +751,100 @@ input#search {
         .avatar input{
 
         }
+/*/////////////////////////new*/
+#take_a_tour {
+/*    width:850px;*/
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+   /* text-shadow:0 1px 2px #ddd;*/
+   /*text-shadow:2px 1px 1px #ddd;*/
+}
+.tat_titles {
+    color: #444;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+   /* border-bottom: 3px #eed77d solid;*/
+    /*text-shadow:2px 2px 1px #888800;*/
+}
+.tat_issue {
+    width: 90px;
+    height: 75px;
+    float:left;
+    border: 3px #aaa ridge;
+    text-align: center;
+    padding:3px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    /*margin: 0px 10px 10px 40px;*/
+}
+.behind {
+    padding:3px;
+    width:100px;
+    height: 87px;
+    margin: 0px 10px 10px 40px;
+    padding: 0px;
+    float: left;
+    background-color: #555867;
+    border: 1px black solid;
+}
+#f_behind {
+    -webkit-transform:rotate(-18deg);
+    -moz-transform:rotate(-18deg);
+}
+#first_step {
+    background-color: #2daebf;
+    -webkit-transform:rotate(12deg);
+    -moz-transform:rotate(12deg);
+    color: #fff;
+    text-shadow:0 1px 2px #222;
+}
+#second_step {
+    background-color: #91bd09;
+    -webkit-transform:rotate(12deg);
+    -moz-transform:rotate(12deg);
+    color: #fff;
+    text-shadow:0 1px 2px #222;
+}
+#third_step {
+    background-color: #ff5c00;
+    -webkit-transform:rotate(12deg);
+    -moz-transform:rotate(12deg);
+    color: #fff;
+    text-shadow:0 1px 2px #222;
+}
+#fourth_step {
+    background-color: #2daebf;
+    -webkit-transform:rotate(12deg);
+    -moz-transform:rotate(12deg);
+    color: #fff;
+    text-shadow:0 1px 2px #222;
+}
+#fifth_step {
+    background-color: #91bd09;
+    -webkit-transform:rotate(12deg);
+    -moz-transform:rotate(12deg);
+    color: #fff;
+    text-shadow:0 1px 2px #222;
+}
+#sixth_step {
+    background-color: #ffb515;
+    -webkit-transform:rotate(12deg);
+    -moz-transform:rotate(12deg);
+    color: #fff;
+    text-shadow:0 1px 2px #222;
+}
+.tat_step {
+    width:214px;
+    height: 120px;
+    overflow: hidden;
+    float: left;
+    margin-left: 12px;
+}
 
 
 

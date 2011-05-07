@@ -1,0 +1,145 @@
+- unless current_user && current_user.id == @user.id
+  = render(:partial => 'layouts/logo_photos')
+.wrapper
+  %section.content
+    .flash
+    %article{:class => "article_top_photos", :id => "take_a_tour"}
+      %header.title
+        %h2
+          %a{:href => "#"} User guide
+        %b
+        %b
+      .article_content
+        %div
+          %div{:class => "behind", :id => "f_behind"}
+            %div{:class => "tat_issue", :id => "first_step"}
+              %p
+                1.You are welcomed!
+          .tat_step
+            %p
+              It's
+              %span{:class => "tat_titles", :id => "tat_imho_title"}
+                %a{:href => "#"}
+                  ImHo 
+              - free
+              %span{:class => "tat_titles", :id => "tat_imho_title"}
+                image hosting
+              with 
+              %span{:class => "tat_titles", :id => "tat_imho_title"}
+                editing
+            %br
+          %div{:class => "behind", :id => "f_behind"}
+            %div{:class => "tat_issue", :id => "first_step"}
+              %p
+                2.It's very easy to start!
+          .tat_step
+            %p
+              Just click 
+              %span{:class => "tat_titles", :id => "tat_imho_title"}
+                %a{:href => "#"}
+                  Sing up
+              and create your own
+              %span{:class => "tat_titles", :id => "tat_imho_title"}
+                profile
+            %br
+          %div{:class => "behind", :id => "f_behind"}
+            %div{:class => "tat_issue", :id => "first_step"}
+              %p
+                3.Open your profile
+          .tat_step
+            %p
+              %span{:class => "tat_titles", :id => "tat_imho_title"}
+                %a{:href => "#"}
+                  Sign in
+              and click
+              %span{:class => "tat_titles", :id => "tat_imho_title"}
+                %a{:href => "#"}
+                  My page
+              to see your profile
+            %br
+          %div{:class => "behind", :id => "f_behind"}
+            %div{:class => "tat_issue", :id => "first_step"}
+              %p
+                4.Upload photos
+          .tat_step
+            %p
+              Click 
+              %span{:class => "tat_titles", :id => "tat_imho_title"}
+                %a{:href => "#"}
+                  Upload photo 
+              and upload one or more photos. All your photos will be seen by whole world
+            %br
+          %div{:class => "behind", :id => "f_behind"}
+            %div{:class => "tat_issue", :id => "first_step"}
+              %p
+                5.Manage you data
+          .tat_step
+            %p
+              On your own page You can manage your Photos, Name and Avatar. Click 
+              %span{:class => "tat_titles", :id => "tat_imho_title"}
+                Save
+              and settings will be accepted
+            %br
+          %div{:class => "behind", :id => "f_behind"}
+            %div{:class => "tat_issue", :id => "first_step"}
+              %p
+                6.Edit your photos
+          .tat_step
+            %p
+              Click
+              %span{:class => "tat_titles", :id => "tat_imho_title"}
+                edit
+              on the photo you want to change and it will be opened in our
+              %span{:class => "tat_titles", :id => "tat_imho_title"}
+                editor 
+              You can edit and download it
+            %br
+  %section.sidebar
+    %article.article_block_tags
+      %header.title
+        %h2
+          %a{:href => "#"} You can do
+      %br
+      %br
+      %br
+      .article_content
+        %ul.right.tick
+        - if current_user
+          %span.avatar
+            = image_tag(current_user.avatar.url(:thumb))
+          %strong
+            = current_user.full_name
+          ,
+          = current_user.attaches.count
+          Photos
+          %br
+          %br
+          %a{:class => "large small_w blue awesome", :href =>  edit_user_path(current_user)}
+            Upload photo
+          %a{:class => "large small_w green awesome", :href => user_path(current_user)}
+            My page
+          %a{:class => "large small_w yellow awesome", :href => destroy_session_path(current_user)}
+            Log Out
+        -else
+          %a{:class => "large medium_w green awesome", :href => new_user_session_path}
+            Sign in
+          %a{:class => "large medium_w yellow awesome", :href => new_user_registration_path}
+            Sign Up
+          %br
+          %br
+          %a{:class => "large medium_w orange awesome", :href => new_user_session_path}
+            Upload photo
+          %a{:class => "large medium_w blue awesome", :href => new_user_session_path}
+            Take a tour
+        %br
+        %br
+    - if current_user && current_user.id == @user.id
+      %article.article_users_photos
+        %header.title
+          %h2
+            %a{:href => "#"} Manage my data
+        .article_content
+          = render :partial => "form_photos"
+          %br/
+
+
