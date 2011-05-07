@@ -5,14 +5,14 @@
       Upload photo
     %a{:class => "large medium_w blue awesome", :href => new_user_session_path}
       Take a tour
-    %li Crop, resize, and rotate in real-time
+    %li Edit, resize, and rotate in real-time
     %li
       %strong Free!
-      No registration required.
+      Only email required.
   %ul.right.tick
     - if current_user
       %a{:class => "large medium_w green awesome", :href => user_path(current_user)}
-        Your page
+        My page
       %a{:class => "large medium_w yellow awesome", :href => destroy_session_path(current_user)}
         Log Out
       %br
@@ -32,6 +32,6 @@
       %li Fix your photos in just one click
       %li
         %strong Free!
-        No registration required.
+        Just create your account.
   .logo_title
     %img{:src => "/images/logo_intro.png"}/

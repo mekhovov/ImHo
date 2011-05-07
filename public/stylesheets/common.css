@@ -437,7 +437,10 @@ hr {
   color: #EED77D;
   margin-left: auto;
   margin-right: auto;
-  width: 350px;
+  width: 570px;
+}
+.logo_title img{
+   margin-left: 14%;
 }
 .logo_img {
     margin-left: 35.1%;
