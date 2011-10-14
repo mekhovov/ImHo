@@ -1,11 +1,11 @@
 %span.photo_thumb
-  = link_to image_tag( attach.photo.url(:thumb), {:alt => attach.photo.url, :id => attach.id}),  user_path(attach.user)
+  = link_to image_tag( attach.photo.url(:thumb), {:alt => attach.photo.url, :id => attach.id}),  attach_path(attach.id)
   %span.comment-count= attach.comments.count
   = form_for Like.new(:attach => attach), :html => {:id => "new_like_#{attach.id}"} do |f|
     = f.hidden_field :attach_id
     %span.like-count{:class => like_class(attach.id)}= attach.likes.count
   %span.user-name
-    = link_to attach.user.full_name, user_path(attach.user)
+    = link_to (attach.user.name.blank? ? attach.user.email[/^[\w\.]*/]  : attach.user.name), user_path(attach.user)
   - if current_user && current_user.id == attach.user.id
     %span.photo-edit
       %a{:class => "small green awesome", :href => edit_attach_path(attach.id) }

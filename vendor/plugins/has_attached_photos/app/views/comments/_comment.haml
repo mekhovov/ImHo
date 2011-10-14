@@ -4,7 +4,7 @@
     guest:
   -else
     =image_tag User.find(comment.user_id).avatar.url(:thumb)
-    =User.find(comment.user_id).email + ":"
+    =User.find(comment.user_id).full_name + ":"
   =comment.created_at.strftime('%a, %d %B %Y')
 %br
 =comment.comment

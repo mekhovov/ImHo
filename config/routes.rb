@@ -1,4 +1,4 @@
-YaHoPicaso::Application.routes.draw do
+ImHo::Application.routes.draw do
 
   devise_for :users
 
@@ -8,4 +8,8 @@ YaHoPicaso::Application.routes.draw do
   resources :attaches
   resources :comments
   resources :likes
+
+  match "/attaches/raw" => "attaches#raw", :as => :raw
+  match "/guide" => "users#guide"
+
 end

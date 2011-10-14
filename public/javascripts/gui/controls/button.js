@@ -31,11 +31,19 @@ var Button = function(parent, width, height, title, fn) {
 
 	var drawTitle = function() {
 
+    if (title.substr(-4, 4) == '.bmp') {
+
+      svg.image(title, 0, 0, width, height);
+
+    } else {
+
 		svg.text(width / 2, height / 2, title).attr({
 
 			'font-size': height * 0.52
 
 		});
+
+	}
 
 	}
 

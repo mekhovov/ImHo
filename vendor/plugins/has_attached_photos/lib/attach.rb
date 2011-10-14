@@ -6,8 +6,8 @@ class Attach < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_many :likes, :dependent => :destroy
   has_attached_file :photo, 
-                    :styles => { :large => "640x480", :medium => "300x300>", :thumb => "100x100>" },
-                    :default_style => :medium,
+                    :styles => { :large => "800x600>", :medium => "300x300>", :thumb => "100x100>" },
+                    :default_style => :large,
                     :default_url => "/images/no_photo.png"	# copy img to plugin
 
   def method_missing name, *args

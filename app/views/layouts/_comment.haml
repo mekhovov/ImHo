@@ -1,13 +1,16 @@
 %span.photo_thumb
-  = link_to image_tag( comment.attach.photo.url(:thumb), {:alt => comment.attach.photo.url, :id => comment.attach.id}),  user_path(comment.attach.user)
-%b
-  -if comment.user_id.nil?
-    /=image_tag "/images/no_avatar.png"
-    guest:
-  -else
-    /=image_tag User.find(comment.user_id).avatar.url(:thumb)
-    =User.find(comment.user_id).email + ":"
-  /=comment.created_at.strftime('%a, %d %B %Y')
+  = link_to image_tag( comment.attach.photo.url(:thumb), {:alt => comment.attach.photo.url, :id => comment.attach.id}),  attach_path(comment.attach)
 %br
 =comment.comment
+%br
+%span{:style => "float: right; "}
+%b
+  -if comment.user_id.nil?
+    guest
+    =image_tag "/images/no_avatar.png"
+  -else
+    =User.find(comment.user_id).full_name
+    =image_tag User.find(comment.user_id).avatar.url(:thumb)
+%br
+  =comment.created_at.strftime('%d %B, %H:%M')
 %hr

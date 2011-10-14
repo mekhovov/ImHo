@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   
   def index
     @top_rated = Attach.all.sort_by {|att| att.likes.count}.reverse.paginate :page => params[:page], :per_page => 6
-    @new_added = Attach.order('updated_at DESC').limit(6)
-    @new_comments = Comment.order('updated_at DESC').limit(4)
+    @new_added = Attach.order('updated_at DESC').limit(12)
+    @new_comments = Comment.order('updated_at DESC').limit(5)
     get_index_view_type
   end
 
@@ -23,7 +23,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_photos = @user.attaches.paginate :page => params[:page], :per_page => 9, :order => 'created_at DESC'
+    if params[:photo]
+      @user_photos = @user.attaches.all(:conditions => ["id NOT IN (?)", params[:photo]])
+      @user_photos = @user.attaches.all(:conditions => ["id IN (?)", params[:photo]]) + @user_photos
+    else
+      @user_photos = @user.attaches
+    end
+    @user_photos = @user_photos.paginate :page => params[:page], :per_page => 9, :order => 'created_at DESC'
+
     @user.attaches.build
     get_view_type
   end
@@ -41,5 +48,10 @@ class UsersController < ApplicationController
     else
       render :action => 'edit'
     end
+  end
+
+  def guide
+    @new_comments = Comment.order('updated_at DESC').limit(5)
+    render :partial => "guide"
   end
 end

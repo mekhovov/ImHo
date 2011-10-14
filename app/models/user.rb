@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   end
 
   def full_name
-    name.blank? ? email : name
+    name.blank? ? email[/^[\w\.]*/] : name
   end
 
 end

@@ -9,7 +9,7 @@ var Button_Eraser = function() {
 
 		var w = (toolbar.width() - 3) / 2;
 
-		new Button(id, w, w, 'E', function() {
+		new Button(id, w, w, '/images/eraser.bmp', function() {
 
 			ICore.setTool(new Eraser());
 

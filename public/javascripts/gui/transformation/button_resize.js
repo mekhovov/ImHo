@@ -9,7 +9,7 @@ var Button_Resize = function() {
 
 		var w = (transformation.width() - 3) / 2;
 
-		new Button(id, w, 25, 'Resize', function() {
+		new Button(id, 25, 25, '/images/resize.bmp', function() {
 
 			ICore.setTool(new Resize());
 

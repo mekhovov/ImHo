@@ -1,12 +1,16 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.0.10'
+
 gem 'mysql2', '0.2.6'
+#gem 'sqlite3'
+
 gem 'haml'
 gem 'devise' # Devise must be required before RailsAdmin
-gem 'rails_admin'#, :git => 'http://github.com/sferik/rails_admin.git'
+gem 'rails_admin', :git => 'http://github.com/sferik/rails_admin.git', :branch => 'rails-3.0'
+
 gem 'hpricot'
-gem "will_paginate", "~> 3.0.pre2"
+gem "will_paginate", "> 3.0"
 gem 'paperclip'
 
 group :development do

@@ -1,8 +1,11 @@
 # Load the rails application
 require File.expand_path('../application', __FILE__)
 
+# will paginate for arrays
+require 'will_paginate/array'
+
 # Initialize the rails application
-YaHoPicaso::Application.initialize!
+ImHo::Application.initialize!
 
 # web-app-theme: show form error messages inside the generated forms
 ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|

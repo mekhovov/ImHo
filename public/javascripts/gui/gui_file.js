@@ -10,10 +10,12 @@ var GUI_File = function() {
 		file.append('<div class="clear"></div>');
 		file.draggable({'zIndex': 9999});
 
-	}
+	};
 
+    new Button_Save_New();
 	new Button_Save();
+
 
 	GUI.createWindowFile();
 
-}
+};

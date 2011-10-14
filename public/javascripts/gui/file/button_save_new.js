@@ -1,4 +1,4 @@
-var Button_Save = function() {
+var Button_Save_New = function() {
 
 	var id = Config.FILE;
 	var file = $('#' + id);
@@ -7,9 +7,10 @@ var Button_Save = function() {
 
 		var w = (file.width() - 3) / 2;
 
-		new Button(id, w, w, '/images/save.bmp', function() {
+		new Button(id, w, w, '/images/save_new.bmp', function() {
 
-			ICore.saveImage(false);
+			ICore.saveImage(true);
+
 
 		}).create('button');
 

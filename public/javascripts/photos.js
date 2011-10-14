@@ -61,6 +61,20 @@ function setActiveImgIdtoField () {
 	return id;
 };
 
+
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+
+
 $(document).ready(function(){ 
   $("form#new_comment").submit(function(){
     setActiveImgIdtoField();
@@ -90,8 +104,15 @@ $(document).ready(function(){
 		return false;
 	});
 
+  var photo_param = gup( 'photo' );
+  if (photo_param == "")
   $("#thumbnails img:first").show_full_size();
+  else
+    $("#thumbnails #" + photo_param).show_full_size();
+
+    setActiveImgIdtoField();
+  //$.get($("a.comments").attr("href"), $("#comment_attach_id").serialize(), null, "script");
   $("#thumbnails img").getCommentsWithAjax();
-  filmstrip();
+  //filmstrip();
   //$('#gallery').spacegallery({loadingClass: 'loading'});
 });

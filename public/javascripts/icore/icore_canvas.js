@@ -20,15 +20,17 @@ var ICore_Canvas = function() {
 		ICore.getCanvas().width = width;
 		ICore.getCanvas().height = height;
 
+		GUI.resizeWindowCanvas();
+
 	}
 
 	ICore.rotateCanvas = function() {
 
-		var w = ICore.getCanvas().width;
-		var h = ICore.getCanvas().height;
+		var width = ICore.getCanvas().width;
+		var height = ICore.getCanvas().height;
 
-		ICore.getCanvas().width = h;
-		ICore.getCanvas().height = w;
+		ICore.getCanvas().width = height;
+		ICore.getCanvas().height = width;
 
 	}
 

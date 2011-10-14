@@ -1,9 +1,9 @@
 var TextBox = function(parent, width, height) {
 
+	var background, textfield;
+
 	var svg = Raphael(parent, width, height);
 	var cnv = svg.canvas;
-
-	var background, textfield;
 
 	this.create = function(className) {
 
@@ -31,7 +31,7 @@ var TextBox = function(parent, width, height) {
 
 	var drawTextField = function() {
 
-		textfield = svg.text(0, 0, '');
+		textfield = svg.text(height, height / 2, 'Test');
 
 		textfield.attr({
 
@@ -43,23 +43,26 @@ var TextBox = function(parent, width, height) {
 
 	var setClickEvent = function() {
 
-		$(textfield).click(function() {
+		var focus = function() {
 
-			alert('Focus in.');
+			document.onkeypress = function(event) {
 
-		});
+				if (event.isChar) {
+
+					textfield.node.firstChild.firstChild.data += String
+					.fromCharCode(event.charCode);
+
+	}
+
+			}
+
+		}
+
+		svg.set().push(background, textfield).click(focus);
 
 	}
 
 	var setKeypressEvent = function() {
-
-		$(document).keypress(function(event) {
-
-			alert('Key pressed.');
-
-//			textfield.node.innerHTML += event.keyCode;
-
-		});
 
 	}
 

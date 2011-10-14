@@ -7,7 +7,7 @@ var Button_Undo = function() {
 
 		var w = (history.width() - 3) / 2;
 
-		new Button(id, w, w, 'U', function() {
+		new Button(id, w, w, '/images/undo.bmp', function() {
 
 			ICore.undo();
 

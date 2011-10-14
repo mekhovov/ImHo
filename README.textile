@@ -1,4 +1,4 @@
-h1. YaHoPicaso: Yet Another Pictures Hosting
+h1. ImHo: Images Hosting
 
 comming soon..
 

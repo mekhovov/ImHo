@@ -9,7 +9,7 @@ var Button_Rotate = function() {
 
 		var w = (transformation.width() - 3) / 2;
 
-		new Button(id, w, 25, 'Rotate', function() {
+		new Button(id, 25, 25, '/images/rotate.bmp', function() {
 
 			ICore.setTool(new Rotate());
 

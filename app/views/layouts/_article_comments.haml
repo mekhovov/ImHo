@@ -2,10 +2,10 @@
 %article.article_block_comments
   %header.title
     %h2
-      %a{:href => "#"} Last comments
+      %span
+        Last comments
     %br/
     %br/
   .article_content
     #comments
       =render :partial => 'layouts/comment', :collection => @new_comments
-    /%img{:src => "/images/_tmp/example_comments.png"}

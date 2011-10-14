@@ -9,7 +9,7 @@ var Button_Brush = function() {
 
 		var w = (toolbar.width() - 3) / 2;
 
-		new Button(id, w, w, 'B', function() {
+		new Button(id, w, w, '/images/brush.bmp', function() {
 
 			ICore.setTool(new Brush());
 

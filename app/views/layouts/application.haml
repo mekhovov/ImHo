@@ -19,13 +19,21 @@
             = link_to "Home", root_path
           - if current_user
             %li
-              = link_to "Your page", user_path(current_user)
+              = link_to "My page", user_path(current_user)
+            %li
+              = link_to "Upload Photo", edit_user_path(current_user)
             %li
               = link_to "Log out", destroy_session_path(current_user)
           - else
             %li
               = link_to "Sign in", new_user_session_path
+            %li
+              = link_to "Sign up", new_user_registration_path
       .logo_title ImHo: Images Hosting with editing
     / Content
+    .flash
+      - flash.each do |type, message|
+        %div{:class => "message #{type}"}
+          %p= message
     = yield
 
