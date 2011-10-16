@@ -4,13 +4,13 @@
 =comment.comment
 %br
 %span{:style => "float: right; "}
-%b
-  -if comment.user_id.nil?
-    guest
-    =image_tag "/images/no_avatar.png"
-  -else
-    =User.find(comment.user_id).full_name
-    =image_tag User.find(comment.user_id).avatar.url(:thumb)
-%br
-  =comment.created_at.strftime('%d %B, %H:%M')
+  %b
+    -if comment.user_id.nil?
+      guest
+      =image_tag "/images/no_avatar.png"
+    -else
+      =User.find(comment.user_id).full_name
+      =image_tag User.find(comment.user_id).avatar.url(:thumb)
+  %br
+    =comment.created_at.strftime('%d %B, %H:%M')
 %hr
