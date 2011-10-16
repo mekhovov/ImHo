@@ -9,6 +9,9 @@
     %li
       %strong Free!
       Only email required.
+    %li
+      %span{:style => "color: orange"}
+        [Warning: you can't upload photos on this hosting]
   %ul.right.tick
     - if current_user
       %a{:class => "large medium_w green awesome", :href => user_path(current_user)}
