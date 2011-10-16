@@ -1,9 +1,0 @@
-HasAttachedPhotos
-==================
-
-Description:
-    This generator creates the migration, copies javascripts, stylesheets and images needed for has_attached_photos plugin usage
-    
-Usage:
-    script\generate has_attached_photos Class
-    where Class is the class name, that you want to use with has_attached_photos

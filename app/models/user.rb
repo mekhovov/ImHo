@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :avatar, :attaches_attributes
 
-  has_attached_photos
   has_many :likes, :dependent => :destroy
+  has_many :attaches, :include => :comments
   
   accepts_nested_attributes_for :attaches, :allow_destroy => true#, :reject_if =>  proc{ |att| att['photo'].blank?}
 

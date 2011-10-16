@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  shows_attached_photos
   
   def index
     @top_rated = Attach.all.sort_by {|att| att.likes.count}.reverse.paginate :page => params[:page], :per_page => 6
@@ -54,4 +53,20 @@ class UsersController < ApplicationController
     @new_comments = Comment.order('updated_at DESC').limit(5)
     render :partial => "guide"
   end
+
+  def get_view_type
+        @view_type = params[:view_type] || "filmstrip"
+        if @user.attaches.any?
+            @comments = Comment.find_all_by_attach_id @user.attaches[@view_type == 'gallery' ? -1 : 0].id 
+        end
+    end 
+            
+    def get_index_view_type
+        @view_type = "thumbnails"
+    end
+            
+    def view_types
+      %w[filmstrip gallery thumbnails]
+    end
+
 end
